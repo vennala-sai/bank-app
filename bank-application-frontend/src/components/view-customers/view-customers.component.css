@@ -1,0 +1,36 @@
+.btn-spacing{
+    margin-right: 30px;
+}
+.view-acc-btn{
+    color: #000000; 
+}
+.table-body{
+    padding: 30px;
+}
+
+.search-style{
+    padding: 30px;
+    width: 50rem;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex; 
+}
+
+.search-icon-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table-style{
+    width: 100%;
+    background-color: transparent !important;
+}
+
+.table-style th {
+    font-weight: bold; 
+}
+.full-page{
+    height: 100vh;
+    overflow-y: auto;
+    background: linear-gradient(to left, #4fd1cd, #185a9d);
+}

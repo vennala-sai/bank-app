@@ -1,0 +1,31 @@
+<div class="full-page-container">
+    <button class="btn" (click)="backToCustomers()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg>
+    </button>
+    <div class="info-style"><h3><strong>{{ customer.name }}</strong></h3></div>
+    <div class="info-style"><h6>ID: {{ customer.customerId }}</h6></div>
+    <div class="sub-info-style"><h5>Total Accounts: <strong>{{ customer.accounts.length }}</strong></h5></div>
+    <div>
+        <div class="card card-style" style="width: 18rem;" *ngFor="let account of customer.accounts">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div *ngIf="account.nextCheckNumber !== undefined">
+                    <span class="badge checking-color">Checking</span>
+                </div>
+                <div *ngIf="account.interestRate !== undefined">
+                    <span class="badge savings-color">Savings</span>
+                </div>
+            </li>
+            <li class="list-group-item"><strong>Balance:</strong> ${{ account.balance }}</li>
+            <li class="list-group-item" *ngIf="account.nextCheckNumber !== undefined">
+                <strong>Next Check Number:</strong> {{ account.nextCheckNumber }}
+            </li>
+            <li class="list-group-item" *ngIf="account.interestRate !== undefined">
+            <strong>Interest Rate:</strong> {{ account.interestRate }}%
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>

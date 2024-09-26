@@ -1,0 +1,26 @@
+.card-style{
+    margin: 20px;
+}
+.checking-color{
+    background-color: #ff1d58;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5em 0.5em; 
+    font-size: 0.9em; 
+    
+}
+.savings-color{
+    background-color: #185a9d;
+    color: white;
+    border-radius: 0.25rem; 
+    padding: 0.5em 0.5em; 
+    font-size: 0.9em; 
+}
+.info-style{
+    text-align: right;
+    padding: 0px 20px;
+}
+.sub-info-style{
+    text-align: right;
+    padding: 0px 10px;
+}

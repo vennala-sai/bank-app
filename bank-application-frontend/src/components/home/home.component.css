@@ -1,0 +1,12 @@
+.full-page-container {
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: linear-gradient(to left, #4fd1cd, #185a9d);
+}
+
+.content-center {
+    text-align: center;
+    color: white; 
+}

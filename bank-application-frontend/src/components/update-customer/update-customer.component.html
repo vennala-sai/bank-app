@@ -1,0 +1,65 @@
+<button class="btn" (click)="backToCustomers()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </svg>
+</button>
+<form #customerForm="ngForm" (ngSubmit)="updateCustomer()" class="form">
+    <br>
+    <div class="d-flex justify-content-between mb-3">
+        <h4>Customer Details:</h4>
+        <button type="button" class="btn btn-danger" (click)="deleteCustomer()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+            </svg>
+        </button>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input ngModel #name="ngModel" required type="text" class="form-control" name="name" placeholder="Please enter name" [(ngModel)]="customer.name">
+      <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+        <div *ngIf="name.errors?.['required']">Name must be entered</div>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+        <label for="customerType" class="form-label">Customer Type:</label>
+      <select id="customerType" name="customerType" class="form-control" [(ngModel)]="customer.customerType">
+        <option value="person">Person</option>
+        <option value="company">Company</option>
+      </select>
+    </div>
+    
+    <div>
+      <br>
+      <h4>Address Details:</h4>
+      <div class="mb-3">
+        <label for="streetNumber" class="form-label">Street Number</label>
+        <input ngModel #streetNumber="ngModel" name="address.streetNumber" required type="text" class="form-control" placeholder="Please enter street number" [(ngModel)]="customer.address.streetNumber">
+        <div class="alert alert-danger" *ngIf="streetNumber.touched && !streetNumber.valid">
+            <div *ngIf="streetNumber.errors?.['required']">Street Number must be entered</div>
+        </div>
+      </div>
+
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input ngModel #city="ngModel" name="address.city" type="text" class="form-control" placeholder="Please enter city name" [(ngModel)]="customer.address.city">
+    </div>
+
+    <div class="mb-3">
+        <label for="province" class="form-label">Province</label>
+        <input ngModel #province="ngModel" name="address.province" type="text" class="form-control" placeholder="Please enter province name" [(ngModel)]="customer.address.province">
+    </div>
+
+      <div class="mb-3">
+        <label for="postalCode" class="form-label">Postal Code</label>
+        <input ngModel #postalCode="ngModel" name="postalCode" required type="text" class="form-control" [(ngModel)]="customer.address.postalCode" placeholder="Enter postal code">
+        <div class="alert alert-danger" *ngIf="postalCode.touched && !postalCode.valid">
+            <div *ngIf="postalCode.errors?.['required']">Postal Code must be entered</div>
+        </div>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Update Customer</button>
+</form>
+  
+ 

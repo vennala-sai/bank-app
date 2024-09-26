@@ -1,0 +1,112 @@
+
+<button class="btn" (click)="backToCustomers()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </svg>
+</button>
+<form #customerForm="ngForm"  class="form"> 
+    <br>
+    <h4>Customer Details:</h4>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input ngModel #name="ngModel" required type="text" class="form-control" name="name" placeholder="Please enter name" [(ngModel)]="customer.name">
+      <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+        <div *ngIf="name.errors?.['required']">Name must be entered</div>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+        <label for="customerType" class="form-label">Customer Type:</label>
+      <select id="customerType" name="customerType" class="form-control" [(ngModel)]="customer.customerType">
+        <option value="person">Person</option>
+        <option value="company">Company</option>
+      </select>
+    </div>
+  
+    <div>
+      <br>
+      <h4>Address Details:</h4>
+      <div class="mb-3">
+        <label for="streetNumber" class="form-label">Street Number</label>
+        <input ngModel #streetNumber="ngModel" name="address.streetNumber" required type="text" class="form-control" placeholder="Please enter street number" [(ngModel)]="customer.address.streetNumber">
+        <div class="alert alert-danger" *ngIf="streetNumber.touched && !streetNumber.valid">
+            <div *ngIf="streetNumber.errors?.['required']">Street Number must be entered</div>
+        </div>
+      </div>
+
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input ngModel #city="ngModel" name="address.city" type="text" class="form-control" placeholder="Please enter city name" [(ngModel)]="customer.address.city">
+    </div>
+
+    <div class="mb-3">
+        <label for="province" class="form-label">Province</label>
+        <input ngModel #province="ngModel" name="address.province" type="text" class="form-control" placeholder="Please enter province name" [(ngModel)]="customer.address.province">
+    </div>
+
+      <div class="mb-3">
+        <label for="postalCode" class="form-label">Postal Code</label>
+        <input ngModel #postalCode="ngModel" name="postalCode" required type="text" class="form-control" [(ngModel)]="customer.address.postalCode" placeholder="Enter postal code">
+        <div class="alert alert-danger" *ngIf="postalCode.touched && !postalCode.valid">
+            <div *ngIf="postalCode.errors?.['required']">Postal Code must be entered</div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <h4>Account Details:</h4>
+
+      <div class="mb-3">
+        <label for="accountType" class="form-label">Select an Account Type:</label>
+      <select id="accountType" name="accountType" class="form-control" [(ngModel)]="accountType">
+        <option value="SavingsAccount">Savings</option>
+        <option value="CheckingAccount">Checking</option>
+      </select>
+    </div>
+
+    <div *ngIf="accountType === 'CheckingAccount'">
+      <div class="mb-3">
+        <label for="balance" class="form-label">Balance</label>
+        <input ngModel #balance="ngModel" name="balance" type="text" class="form-control" placeholder="Please enter the balance" [(ngModel)]="checkingAccount.balance">
+      </div>  
+      <div class="mb-3">
+          <label for="nextCheckNumber" class="form-label">Next Check Number</label>
+          <input ngModel #nextCheckNumber="ngModel" name="nextCheckNumber" type="text" class="form-control" placeholder="Please enter the check number" [(ngModel)]="checkingAccount.nextCheckNumber">
+      </div>
+      <button type="submit" class="btn btn-outline-success" (click)="addAccount()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+        Checking Account
+      </button>
+    </div>
+
+    <div *ngIf="accountType === 'SavingsAccount'">
+      <div class="mb-3">
+        <label for="balance" class="form-label">Balance</label>
+        <input ngModel #balance="ngModel" name="balance" type="text" class="form-control" placeholder="Please enter the balance" [(ngModel)]="savingsAccount.balance">
+      </div>  
+      <div class="mb-3">
+          <label for="interestRate" class="form-label">Interest Rate</label>
+          <input ngModel #interestRate="ngModel" name="nextCheckNumber" type="text" class="form-control" placeholder="Please enter the interest rate" [(ngModel)]="savingsAccount.interestRate">
+      </div>
+      <button type="button" class="btn btn-outline-success" (click)="addAccount()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+        Savings Account
+      </button>
+    </div>
+    <br>
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-success" [disabled]="!customer.customerType" (click)="createCustomer()">Create Customer</button>
+    </div>  
+  </form>
+
+<div *ngIf="alertMessageChecking" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> {{ alertMessageChecking }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div *ngIf="alertMessageSavings" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> {{ alertMessageSavings }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
