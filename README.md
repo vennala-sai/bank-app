@@ -83,18 +83,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    - A 404 error page that appears when the user navigates to a non-existent route. Used a sample page from codepen.
 
    ![Page Not Found](bank-application-frontend/images/page-not-found.png)
-
----
-
-## Installation and Setup
-
-To get started with this project, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://git.fdmgroup.com/Sai.Vennala/BankApplicationFE.git
-   cd BankApplicationFE
-
-2. **Open the project location on terminal (make sure Angular with Node.JS is set up)**
-   ```bash
-   ng serve
