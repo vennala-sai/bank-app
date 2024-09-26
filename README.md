@@ -22,7 +22,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### 1. **Home Page**
    - The landing page of the application that displays a welcome message and navigation bar.
 
-   ![Home Page](images/home-page.png)
+   ![Home Page](bank-application-frontend/images/home-page.png)
 
 ### 2. **Navigation Bar**
    - Provides navigation between different pages of the application. It directs the user to the Register and View Customers pages.
