@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Introduction
 
-**BankApplicationFE** is a front-end application (bank teller system) built with Angular for managing bank customers and their account information. The application features include creating, viewing, updating, and deleting customers, as well as creating and viewing their accounts.
+**BankApplication** is a full stack application (bank teller system) built with Angular for managing bank customers and their account information. The application features include creating, viewing, updating, and deleting customers, as well as creating and viewing their accounts.
 
 ---
 
@@ -27,62 +27,62 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### 2. **Navigation Bar**
    - Provides navigation between different pages of the application. It directs the user to the Register and View Customers pages.
 
-   ![Navigation Bar](images/nav-bar.png)
+   ![Navigation Bar](bank-application-frontend/images/nav-bar.png)
 
 ### 3. **Create Customer and Account Page**
    - Allows the user to create a new customer and simultaneously create one or more savings and checking accounts for that customer. The page includes fields for customer details like name, type, and address, as well as account details like account type and balance. Additionally, based on the account type, it offers fields like "Next Check Number" or "Interest Rate".
 
-   ![Create Customer and Account](images/create-customer-and-accounts-page.png)
+   ![Create Customer and Account](bank-application-frontend/images/create-customer-and-accounts-page.png)
 
 ### 4. **Account Creation Success Alert**
    - A success alert that appears once an account is successfully created.
 
-   ![Account Creation Success Alert](images/accounts-alert-once-created.png)
+   ![Account Creation Success Alert](bank-application-frontend/images/accounts-alert-once-created.png)
 
 ### 5. **Checking Account Creation**
    - A form inside the Create Customer page specifically for creating checking accounts, including fields for balance and next check number.
 
-   ![Checking Account Creation](images/checking-account-create.png)
+   ![Checking Account Creation](bank-application-frontend/images/checking-account-create.png)
 
 ### 6. **Savings Account Creation**
    - A form inside the Create Customer page specifically for creating savings accounts, including fields for balance and interest rate.
 
-   ![Savings Account Creation](images/savings-account-create.png)
+   ![Savings Account Creation](bank-application-frontend/images/savings-account-create.png)
 
 ### 7. **Search by Customer ID**
    - Allows users to search for customers by their ID, displaying all customers whose ID equals or includes the input query. If no specific ID is provided, all customers will be displayed to simplify user navigation.
 
-   ![Search by ID](images/search-by-id.png)
+   ![Search by ID](bank-application-frontend/images/search-by-id.png)
 
 ### 8. **View Customers Page**
    - Displays a list of all customers with their details, allowing actions such as viewing and editing customer information. You can access a customer's accounts by clicking on the "View Accounts" button. If it is disabled, it means that the specific customer has no accounts registered in the system.
 
-   ![View Customers Page](images/view-customers-page.png)
+   ![View Customers Page](bank-application-frontend/images/view-customers-page.png)
 
 ### 9. **View Accounts Page**
    - Displays a list of accounts associated with a selected customer, including account type and other details. You can access this page by clicking the "View Accounts" button on the "View Customers" page.
 
-   ![View Accounts Page](images/view-accounts-page.png)
+   ![View Accounts Page](bank-application-frontend/images/view-accounts-page.png)
 
 ### 10. **Update Customer Page**
    - Allows the user to update the details of an existing customer, including their name, type, and address. When clicked, the form is auto-filled with the selected customer's details retrieved from the database. There is also a red "trash" icon, which deletes the existing customer.
 
-   ![Update Customer Page](images/update-customer-page.png)
+   ![Update Customer Page](bank-application-frontend/images/update-customer-page.png)
 
 ### 11. **Delete Customer Alert**
    - A confirmation alert that appears when a customer is deleted.
 
-   ![Delete Customer Alert](images/once-delete-clicked.png)
+   ![Delete Customer Alert](bank-application-frontend/images/once-delete-clicked.png)
 
 ### 12. **Update Customer Alert**
    - A confirmation alert that appears when a customer's information is successfully updated.
 
-   ![Update Customer Alert](images/once-update-clicked.png)
+   ![Update Customer Alert](bank-application-frontend/images/once-update-clicked.png)
 
 ### 13. **Page Not Found**
    - A 404 error page that appears when the user navigates to a non-existent route. Used a sample page from codepen.
 
-   ![Page Not Found](images/page-not-found.png)
+   ![Page Not Found](bank-application-frontend/images/page-not-found.png)
 
 ---
 
